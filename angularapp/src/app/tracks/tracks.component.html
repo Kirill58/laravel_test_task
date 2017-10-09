@@ -1,0 +1,24 @@
+<button class="button btn btn-primary" (click)="onGetTracks()">Get Tracks</button>
+<app-tracks *ngFor="let track of tracks" [track]="track" > </app-tracks>
+<div id="tracks" class="panel panel-default">
+  <div class="panel-body">
+    {{ track.id_album }}
+    {{ track.artist }}
+    {{ track.title }}
+    {{ track.time }}
+  </div>
+  <div class="panel-footer">
+    <div *ngIf="editing">
+      <input type="text" [(ngModel)]="editAlbumId">
+      <input type="text" [(ngModel)]="editArtist">
+      <input type="text" [(ngModel)]="editTitle">
+      <input type ="text" [(ngModel)]="editTime">
+      <a href="#" (click)="onUpdate()">Save</a>
+      <a href="#" (click)="onCancel()">Cancel</a>
+    </div>
+    <div *ngIf="!editing">
+      <a href="#" (click)="onEdit()">Edit</a>
+      <a href="#" (click)="onDelete()">Delete</a>
+    </div>
+  </div>
+</div>

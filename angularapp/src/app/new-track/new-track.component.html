@@ -1,0 +1,13 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div class="form-group">
+    <label for="albumId">AlbumID</label>
+    <input type="text" id="albumId" name="albumId" ngModel class="form-control">
+    <label for="artist">Artist</label>
+    <input type="text" id="artist" name="artist" ngModel class="form-control">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" ngModel class="form-control">
+    <label for="time">Time</label>
+    <input type="text" id="time" name="time" ngModel class="form-control">
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
